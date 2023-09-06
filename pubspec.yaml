@@ -1,0 +1,14 @@
+name: default_path
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.17.5 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  realm: ^1.4.0
+
+dev_dependencies:
+  flutter_lints: ^2.0.0
