@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fvp/fvp.dart';
 import 'package:realm/realm.dart';
 
 part 'main.g.dart';
@@ -12,7 +13,8 @@ class _Stuff {
 
 final app = App(AppConfiguration('evil-app-mggjg'));
 final userProvider = () async {
-  return app.currentUser ?? await app.logIn(Credentials.anonymous());
+  return app.currentUser ??
+      await app.logIn(Credentials.anonymous(reuseCredentials: false));
 }();
 
 final realmProvider = () async {
@@ -24,6 +26,9 @@ final realmProvider = () async {
 
 Future<void> main() async {
   final realm = await realmProvider;
+  registerWith(options: {
+    'platforms': ['macos']
+  });
   runApp(MyApp(realm: realm));
 }
 

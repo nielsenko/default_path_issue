@@ -9,6 +9,7 @@ dependencies:
   flutter:
     sdk: flutter
   realm: ^1.4.0
+  fvp: ^0.4.0
 
 dev_dependencies:
   flutter_lints: ^2.0.0
